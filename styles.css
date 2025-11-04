@@ -1,0 +1,226 @@
+/* ===== Base Styling ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #0d1117;
+  color: #e6edf3;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h2 {
+  color: #ff6600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 102, 0, 0.1);
+}
+
+/* ===== Header Section ===== */
+header {
+  background: linear-gradient(90deg, #ff6600, #ff2e63);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.3rem;
+}
+
+header p {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
+/* ===== Profile Section ===== */
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  background: #161b22;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #ff6600;
+}
+
+.profile img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #ff6600;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  margin-left: 1rem;
+}
+
+.profile-info h2 {
+  color: #ff6600;
+  margin-bottom: 0.2rem;
+}
+
+.stats {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* ===== Navigation Bar (Placed After Profile) ===== */
+nav {
+  position: sticky;
+  top: 0;
+  background: #161b22;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.8rem 1rem;
+  z-index: 1000;
+  border-bottom: 1px solid #2d333b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  max-width: 1000px;
+  margin: 0.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+nav a {
+  color: #e6edf3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6600;
+}
+
+/* ===== Card Style ===== */
+.card {
+  background: #1a1f24;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid #2d333b;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+th {
+  color: #ff6600;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: #1f242a;
+}
+
+/* ===== Tips List ===== */
+#tips ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#tips li::before {
+  content: "🔥 ";
+}
+
+#tips li {
+  margin: 8px 0;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+  }
+  
+  .profile-info {
+    margin-left: 0;
+  }
+  
+  table,
+  th,
+  td {
+    font-size: 0.85rem;
+  }
+  
+  nav {
+    padding: 0.6rem 0.75rem;
+    gap: 0.8rem;
+  }
+  
+  nav a {
+    font-size: 0.8rem;
+  }
+  
+  /* Mobile table styles */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+  
+  tr {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1f24;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  td {
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    position: relative;
+  }
+  
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #ff6600;
+    margin-right: 10px;
+  }
+}
