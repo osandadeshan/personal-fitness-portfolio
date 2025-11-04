@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Fitness Portfolio</title>
+  <style>
+    /* ===== Base Styling ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    h2 {
+      color: #ff6600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: #161b22;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 102, 0, 0.1);
+    }
+
+    /* ===== Header Section ===== */
+    header {
+      background: linear-gradient(90deg, #ff6600, #ff2e63);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.3rem;
+    }
+
+    header p {
+      margin-top: 0.3rem;
+      font-size: 1rem;
+    }
+
+    /* ===== Profile Section ===== */
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      background: #161b22;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #ff6600;
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #ff6600;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .profile-info {
+      margin-left: 1rem;
+    }
+
+    .profile-info h2 {
+      color: #ff6600;
+      margin-bottom: 0.2rem;
+    }
+
+    .stats {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    /* ===== Navigation Bar (Placed After Profile) ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #161b22;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.8rem 0;
+      z-index: 1000;
+      border-bottom: 1px solid #2d333b;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav a {
+      color: #e6edf3;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
+    /* ===== Card Style ===== */
+    .card {
+      background: #1a1f24;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border-bottom: 1px solid #2d333b;
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    th {
+      color: #ff6600;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #1f242a;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🔥 ";
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+      }
+      .profile-info {
+        margin-left: 0;
+      }
+      table, th, td {
+        font-size: 0.85rem;
+      }
+      nav a {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>Personal Fitness Portfolio 💪</h1>
+    <p>Personal Training & Muscle Building Journey</p>
+  </header>
+
+  <!-- ===== Profile Section ===== -->
+  <section id="profile" class="profile">
+    <img src="profile-photo.jpg" alt="Profile Picture">
+    <div class="profile-info">
+      <h2>Osanda Nimalarathna</h2>
+      <p class="stats">💪 Weight: 68kg | 📏 Height: 5'7"</p>
+      <p class="stats">🎯 Goal: Build bigger biceps & triceps</p>
+    </div>
+  </section>
+
+  <!-- ===== Navigation Bar (Now Below Profile) ===== -->
+  <nav>
+    <a href="#meals">🍗 Meals</a>
+    <a href="#workouts">🏋️ Workouts</a>
+    <a href="#tips">💡 Tips</a>
+    <a href="#top">⬆️ Top</a>
+  </nav>
+
+  <!-- ===== Meal Plan Section ===== -->
+  <section id="meals" class="card">
+    <h2>🥗 Daily Meal Plan</h2>
+    <table>
+      <tr><th>Time</th><th>Meal</th><th>Foods</th><th>Protein (g)</th><th>Calories</th></tr>
+      <tr><td>7:30 AM</td><td>Breakfast</td><td>4 eggs + 2 whites, 2 bread, banana, milk</td><td>32</td><td>520</td></tr>
+      <tr><td>10:30 AM</td><td>Snack</td><td>2 boiled eggs, apple</td><td>14</td><td>180</td></tr>
+      <tr><td>1:00 PM</td><td>Lunch</td><td>2 chicken legs, rice, vegetables, yogurt</td><td>45</td><td>700</td></tr>
+      <tr><td>5:00 PM</td><td>Pre-Workout</td><td>2 eggs, toast, banana</td><td>16</td><td>300</td></tr>
+      <tr><td>7:00 PM</td><td>Post-Workout</td><td>Whey or 3 eggs, milk</td><td>25</td><td>200</td></tr>
+      <tr><td>8:30 PM</td><td>Dinner</td><td>2 chicken legs, chapatis, salad</td><td>38</td><td>600</td></tr>
+      <tr><td>10:30 PM</td><td>Before Bed</td><td>1 glass milk</td><td>7</td><td>150</td></tr>
+    </table>
+    <p><b>Total:</b> ~130g protein | ~2650 kcal</p>
+  </section>
+
+  <!-- ===== Workout Section ===== -->
+  <section id="workouts" class="card">
+    <h2>🏋️ Weekly Workout Routine</h2>
+    <table>
+      <tr><th>Day</th><th>Focus</th><th>Exercises</th></tr>
+      <tr><td>Mon</td><td>Biceps + Back</td><td>Barbell curls, Dumbbell curls, Hammer curls, Pull-ups, Dumbbell rows</td></tr>
+      <tr><td>Tue</td><td>Triceps + Chest</td><td>Close-grip bench press, Dips, Overhead extension, Push-ups, Bench press</td></tr>
+      <tr><td>Wed</td><td>Rest / Cardio</td><td>Walking, cycling, planks, crunches</td></tr>
+      <tr><td>Thu</td><td>Biceps + Shoulders</td><td>Barbell curls, Concentration curls, Shoulder press, Lateral raises</td></tr>
+      <tr><td>Fri</td><td>Triceps + Chest</td><td>Bench dips, Rope pushdowns, Skull crushers, Incline press</td></tr>
+      <tr><td>Sat</td><td>Legs + Core</td><td>Squats, Lunges, Step-ups, Plank, Leg raises</td></tr>
+      <tr><td>Sun</td><td>Rest</td><td>Stretching, recovery, yoga</td></tr>
+    </table>
+  </section>
+
+  <!-- ===== Tips Section ===== -->
+  <section id="tips" class="card">
+    <h2>💡 Fitness Tips</h2>
+    <ul>
+      <li>Eat in a slight calorie surplus (+300–500 kcal/day).</li>
+      <li>Train 4–5 days per week, rest properly.</li>
+      <li>Progressively increase weights every 1–2 weeks.</li>
+      <li>Stay hydrated (3L water daily).</li>
+      <li>Sleep 7–8 hours — muscles grow during rest!</li>
+    </ul>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer">
+    © 2025 Personal Fitness Portfolio | Designed by Osanda Nimalarathna
+  </div>
+
+</body>
+</html>
