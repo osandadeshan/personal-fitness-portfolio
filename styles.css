@@ -175,9 +175,7 @@ tr:nth-child(even) {
     margin-left: 0;
   }
   
-  table,
-  th,
-  td {
+  table, th, td {
     font-size: 0.85rem;
   }
   
@@ -190,37 +188,37 @@ tr:nth-child(even) {
     font-size: 0.8rem;
   }
   
-  /* Mobile table styles */
-  table, thead, tbody, th, td, tr {
-    display: block;
+  /* Keep table layout but make it horizontally scrollable on mobile */
+  .card {
+    overflow-x: auto;
   }
   
-  thead tr {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
+  table {
+    min-width: 600px; /* Ensure table doesn't get too narrow */
   }
   
-  tr {
-    margin-bottom: 12px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #1a1f24;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  th, td {
+    padding: 0.6rem 0.4rem;
+  }
+}
+
+/* Additional mobile optimization for very small screens */
+@media (max-width: 480px) {
+  table {
+    min-width: 500px;
   }
   
-  td {
-    border: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 12px;
-    position: relative;
+  th, td {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
   }
   
-  td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #ff6600;
-    margin-right: 10px;
+  section {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  
+  .card {
+    padding: 0.8rem;
   }
 }
