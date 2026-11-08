@@ -1,175 +1,397 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Fitness Portfolio</title>
+    <title>Personal Fitness Portfolio | Osanda Nimalarathna</title>
+    <meta
+      name="description"
+      content="Osanda Nimalarathna's personal training and muscle building journey: daily meal plan, weekly workout routine and fitness tips."
+    />
+    <meta name="theme-color" content="#07080F" />
+
+    <!-- Apply saved theme before first paint (default: dark) -->
+    <script>
+      (function () {
+        var t = "dark";
+        try {
+          if (localStorage.getItem("theme") === "light") t = "light";
+        } catch (e) {}
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.classList.add("js");
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" type="text/css" />
   </head>
+
   <body>
-    <!-- ===== Header ===== -->
-    <header>
-      <h1>Personal Fitness Portfolio 💪</h1>
-      <p>Personal Training & Muscle Building Journey</p>
-    </header>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="progress" aria-hidden="true"></div>
 
-    <!-- ===== Profile Section ===== -->
-    <section id="profile" class="profile">
-      <img src="profile-photo.jpg" alt="Profile Picture" />
-      <div class="profile-info">
-        <h2>Osanda Nimalarathna</h2>
-        <p class="stats">💪 Weight: 68kg | 📏 Height: 5'7"</p>
-        <p class="stats">🎯 Goal: Build bigger biceps & triceps</p>
+    <!-- ===== Navigation ===== -->
+    <nav class="topbar" id="topbar" aria-label="Primary">
+      <a href="#home" class="logo"><span class="logo-mark">ON</span>Fitness</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#meals">Meals</a></li>
+        <li><a href="#workouts">Workouts</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch colour theme"
+        >
+          <i class="bi bi-moon-stars-fill i-moon"></i
+          ><i class="bi bi-sun-fill i-sun"></i>
+        </button>
+        <button
+          class="icon-btn menu-btn"
+          id="menuBtn"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <i class="bi bi-list"></i>
+        </button>
       </div>
-    </section>
-
-    <!-- ===== Navigation Bar (Now Below Profile) ===== -->
-    <nav>
-      <a href="#meals">🍗 Meals</a>
-      <a href="#workouts">🏋️ Workouts</a>
-      <a href="#tips">💡 Tips</a>
-      <a href="#top">⬆️ Top</a>
     </nav>
 
-    <!-- ===== Meal Plan Section ===== -->
-    <section id="meals" class="card">
-      <h2>🥗 Daily Meal Plan</h2>
-      <table>
-        <tr>
-          <th>Time</th>
-          <th>Meal</th>
-          <th>Foods</th>
-          <th>Protein (g)</th>
-          <th>Calories (kcal)</th>
-        </tr>
-        <tr>
-          <td>7:30 AM</td>
-          <td>Breakfast</td>
-          <td>4 eggs + 2 whites, 2 bread, banana, milk</td>
-          <td>32</td>
-          <td>520</td>
-        </tr>
-        <tr>
-          <td>10:30 AM</td>
-          <td>Snack</td>
-          <td>2 boiled eggs, apple</td>
-          <td>14</td>
-          <td>180</td>
-        </tr>
-        <tr>
-          <td>1:00 PM</td>
-          <td>Lunch</td>
-          <td>2 chicken legs, rice, vegetables, yogurt</td>
-          <td>45</td>
-          <td>700</td>
-        </tr>
-        <tr>
-          <td>5:00 PM</td>
-          <td>Pre-Workout</td>
-          <td>2 eggs, toast, banana</td>
-          <td>16</td>
-          <td>300</td>
-        </tr>
-        <tr>
-          <td>7:00 PM</td>
-          <td>Post-Workout</td>
-          <td>Whey or 3 eggs, milk</td>
-          <td>25</td>
-          <td>200</td>
-        </tr>
-        <tr>
-          <td>8:30 PM</td>
-          <td>Dinner</td>
-          <td>2 chicken legs, chapatis, salad</td>
-          <td>38</td>
-          <td>600</td>
-        </tr>
-        <tr>
-          <td>10:30 PM</td>
-          <td>Before Bed</td>
-          <td>1 glass milk</td>
-          <td>7</td>
-          <td>150</td>
-        </tr>
+    <main id="main">
+      <!-- ===== Hero ===== -->
+      <section id="home" class="hero">
+        <div class="blob blob-1" aria-hidden="true"></div>
+        <div class="blob blob-2" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div>
+            <div class="status-pill reveal">
+              <span class="pulse"></span>Currently in a lean bulk phase
+            </div>
+            <h1 class="hero-title reveal d1">
+              Personal <span class="grad-text">Fitness</span><br />Portfolio.
+            </h1>
+            <p
+              class="typed-line reveal d2"
+              aria-label="Personal training, muscle building, clean eating, progressive overload"
+            >
+              <span class="prompt" aria-hidden="true">~$</span>
+              <span id="typed" aria-hidden="true"></span
+              ><span class="caret" aria-hidden="true"></span>
+            </p>
+            <p class="hero-desc reveal d2">
+              I'm Osanda Nimalarathna, and this is my personal training and
+              muscle building journey. Here's exactly what I eat, how I train
+              each week, and the habits that keep me progressing toward bigger
+              biceps and triceps.
+            </p>
+            <div class="hero-cta reveal d3">
+              <a href="#meals" class="btn btn-primary"
+                >See my meal plan <i class="bi bi-arrow-right"></i
+              ></a>
+              <a href="#workouts" class="btn btn-ghost"
+                ><i class="bi bi-calendar-week"></i> Weekly routine</a
+              >
+            </div>
+          </div>
 
-        <!-- ===== Total Row ===== -->
-        <tr style="font-weight: bold">
-          <td colspan="3" style="text-align: right">Total</td>
-          <td>177 g</td>
-          <td>2650 kcal</td>
-        </tr>
-      </table>
-    </section>
+          <div class="portrait-wrap reveal d2">
+            <div class="portrait-ring glow" aria-hidden="true"></div>
+            <div class="portrait-ring" aria-hidden="true"></div>
+            <div class="portrait">
+              <img
+                src="profile-photo.jpg"
+                alt="Portrait of Osanda Nimalarathna"
+                width="1904"
+                height="2000"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="float-card fc-1">
+              <i class="bi bi-bullseye grad-text"></i>
+              <div>Goal<small>Bigger biceps &amp; triceps</small></div>
+            </div>
+            <div class="float-card fc-2">
+              <i class="bi bi-lightning-charge-fill grad-text"></i>
+              <div>5 training days<small>per week</small></div>
+            </div>
+          </div>
+        </div>
+        <a href="#profile" class="scroll-hint" aria-label="Scroll to content"
+          ><i class="bi bi-chevron-double-down"></i
+        ></a>
+      </section>
 
-    <!-- ===== Workout Section ===== -->
-    <section id="workouts" class="card">
-      <h2>🏋️ Weekly Workout Routine</h2>
-      <table>
-        <tr>
-          <th>Day</th>
-          <th>Focus</th>
-          <th>Exercises</th>
-        </tr>
-        <tr>
-          <td>Mon</td>
-          <td>Biceps + Back</td>
-          <td>
-            Barbell curls, Dumbbell curls, Hammer curls, Pull-ups, Dumbbell rows
-          </td>
-        </tr>
-        <tr>
-          <td>Tue</td>
-          <td>Triceps + Chest</td>
-          <td>
-            Close-grip bench press, Dips, Overhead extension, Push-ups, Bench
-            press
-          </td>
-        </tr>
-        <tr>
-          <td>Wed</td>
-          <td>Rest / Cardio</td>
-          <td>Walking, cycling, planks, crunches</td>
-        </tr>
-        <tr>
-          <td>Thu</td>
-          <td>Biceps + Shoulders</td>
-          <td>
-            Barbell curls, Concentration curls, Shoulder press, Lateral raises
-          </td>
-        </tr>
-        <tr>
-          <td>Fri</td>
-          <td>Triceps + Chest</td>
-          <td>Bench dips, Rope pushdowns, Skull crushers, Incline press</td>
-        </tr>
-        <tr>
-          <td>Sat</td>
-          <td>Legs + Core</td>
-          <td>Squats, Lunges, Step-ups, Plank, Leg raises</td>
-        </tr>
-        <tr>
-          <td>Sun</td>
-          <td>Rest</td>
-          <td>Stretching, recovery, yoga</td>
-        </tr>
-      </table>
-    </section>
+      <!-- ===== Profile Stats ===== -->
+      <div class="container" id="profile">
+        <div class="stats">
+          <div class="card stat spot reveal">
+            <i class="bi bi-speedometer2 stat-ic" aria-hidden="true"></i>
+            <div class="num grad-text">68<span class="unit">kg</span></div>
+            <div class="label">Body weight</div>
+          </div>
+          <div class="card stat spot reveal d1">
+            <i class="bi bi-rulers stat-ic" aria-hidden="true"></i>
+            <div class="num grad-text">5'7"</div>
+            <div class="label">Height</div>
+          </div>
+          <div class="card stat spot reveal d2">
+            <i class="bi bi-egg-fried stat-ic" aria-hidden="true"></i>
+            <div class="num grad-text">177<span class="unit">g</span></div>
+            <div class="label">Daily protein</div>
+          </div>
+          <div class="card stat spot reveal d3">
+            <i class="bi bi-fire stat-ic" aria-hidden="true"></i>
+            <div class="num grad-text">2650</div>
+            <div class="label">Daily kcal</div>
+          </div>
+        </div>
+      </div>
 
-    <!-- ===== Tips Section ===== -->
-    <section id="tips" class="card">
-      <h2>💡 Fitness Tips</h2>
-      <ul>
-        <li>Eat in a slight calorie surplus (+300–500 kcal/day).</li>
-        <li>Train 4–5 days per week, rest properly.</li>
-        <li>Progressively increase weights every 1–2 weeks.</li>
-        <li>Stay hydrated (3L water daily).</li>
-        <li>Sleep 7–8 hours — muscles grow during rest!</li>
-      </ul>
-    </section>
+      <!-- ===== Meal Plan ===== -->
+      <section id="meals">
+        <div class="container">
+          <div class="eyebrow reveal">Nutrition</div>
+          <h2 class="section-title reveal d1">
+            Daily <span class="grad-text">meal plan</span>
+          </h2>
+          <p class="section-lead reveal d2">
+            Seven meals spread across the day to hit 177 g of protein and a
+            steady calorie surplus for lean muscle gain.
+          </p>
+
+          <div class="card table-card reveal">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Meal</th>
+                    <th>Foods</th>
+                    <th class="num-col">Protein (g)</th>
+                    <th class="num-col">Calories (kcal)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">7:30 AM</td>
+                    <td><span class="chip chip-sm">Breakfast</span></td>
+                    <td>4 eggs + 2 whites, 2 bread, banana, milk</td>
+                    <td class="num-col">32</td>
+                    <td class="num-col">520</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">10:30 AM</td>
+                    <td><span class="chip chip-sm">Snack</span></td>
+                    <td>2 boiled eggs, apple</td>
+                    <td class="num-col">14</td>
+                    <td class="num-col">180</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">1:00 PM</td>
+                    <td><span class="chip chip-sm">Lunch</span></td>
+                    <td>2 chicken legs, rice, vegetables, yogurt</td>
+                    <td class="num-col">45</td>
+                    <td class="num-col">700</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">5:00 PM</td>
+                    <td><span class="chip chip-sm">Pre-Workout</span></td>
+                    <td>2 eggs, toast, banana</td>
+                    <td class="num-col">16</td>
+                    <td class="num-col">300</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">7:00 PM</td>
+                    <td><span class="chip chip-sm">Post-Workout</span></td>
+                    <td>Whey or 3 eggs, milk</td>
+                    <td class="num-col">25</td>
+                    <td class="num-col">200</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">8:30 PM</td>
+                    <td><span class="chip chip-sm">Dinner</span></td>
+                    <td>2 chicken legs, chapatis, salad</td>
+                    <td class="num-col">38</td>
+                    <td class="num-col">600</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">10:30 PM</td>
+                    <td><span class="chip chip-sm">Before Bed</span></td>
+                    <td>1 glass milk</td>
+                    <td class="num-col">7</td>
+                    <td class="num-col">150</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="total-label">Total</td>
+                    <td class="num-col grad-text">177 g</td>
+                    <td class="num-col grad-text">2650 kcal</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Workout Routine ===== -->
+      <section id="workouts" class="alt">
+        <div class="container">
+          <div class="eyebrow reveal">Training</div>
+          <h2 class="section-title reveal d1">
+            Weekly <span class="grad-text">workout routine</span>
+          </h2>
+          <p class="section-lead reveal d2">
+            Arms get two dedicated sessions a week, paired with the larger
+            muscle groups that support them, plus legs, core and proper
+            recovery days.
+          </p>
+
+          <div class="card table-card reveal">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Focus</th>
+                    <th>Exercises</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono day">Mon</td>
+                    <td><span class="chip chip-sm">Biceps + Back</span></td>
+                    <td>
+                      Barbell curls, Dumbbell curls, Hammer curls, Pull-ups,
+                      Dumbbell rows
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono day">Tue</td>
+                    <td><span class="chip chip-sm">Triceps + Chest</span></td>
+                    <td>
+                      Close-grip bench press, Dips, Overhead extension,
+                      Push-ups, Bench press
+                    </td>
+                  </tr>
+                  <tr class="rest">
+                    <td class="mono day">Wed</td>
+                    <td><span class="chip chip-sm">Rest / Cardio</span></td>
+                    <td>Walking, cycling, planks, crunches</td>
+                  </tr>
+                  <tr>
+                    <td class="mono day">Thu</td>
+                    <td>
+                      <span class="chip chip-sm">Biceps + Shoulders</span>
+                    </td>
+                    <td>
+                      Barbell curls, Concentration curls, Shoulder press,
+                      Lateral raises
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono day">Fri</td>
+                    <td><span class="chip chip-sm">Triceps + Chest</span></td>
+                    <td>
+                      Bench dips, Rope pushdowns, Skull crushers, Incline press
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono day">Sat</td>
+                    <td><span class="chip chip-sm">Legs + Core</span></td>
+                    <td>Squats, Lunges, Step-ups, Plank, Leg raises</td>
+                  </tr>
+                  <tr class="rest">
+                    <td class="mono day">Sun</td>
+                    <td><span class="chip chip-sm">Rest</span></td>
+                    <td>Stretching, recovery, yoga</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Tips ===== -->
+      <section id="tips">
+        <div class="container">
+          <div class="eyebrow reveal">Habits</div>
+          <h2 class="section-title reveal d1">
+            Fitness <span class="grad-text">tips</span>
+          </h2>
+          <p class="section-lead reveal d2">
+            The fundamentals that matter more than any single exercise.
+          </p>
+
+          <div class="grid-tips">
+            <div class="card tip hover spot reveal">
+              <span class="idx">01</span>
+              <div class="ico"><i class="bi bi-graph-up-arrow"></i></div>
+              <h3>Eat in a surplus</h3>
+              <p>Aim for a slight calorie surplus of +300–500 kcal per day.</p>
+            </div>
+            <div class="card tip hover spot reveal d1">
+              <span class="idx">02</span>
+              <div class="ico"><i class="bi bi-calendar-check"></i></div>
+              <h3>Train consistently</h3>
+              <p>Train 4–5 days per week, and rest properly between sessions.</p>
+            </div>
+            <div class="card tip hover spot reveal d2">
+              <span class="idx">03</span>
+              <div class="ico"><i class="bi bi-bar-chart-steps"></i></div>
+              <h3>Progressive overload</h3>
+              <p>Increase the weights every 1–2 weeks to keep muscles growing.</p>
+            </div>
+            <div class="card tip hover spot reveal">
+              <span class="idx">04</span>
+              <div class="ico"><i class="bi bi-droplet-half"></i></div>
+              <h3>Stay hydrated</h3>
+              <p>Drink around 3 litres of water every day.</p>
+            </div>
+            <div class="card tip hover spot reveal d1">
+              <span class="idx">05</span>
+              <div class="ico"><i class="bi bi-moon-stars"></i></div>
+              <h3>Sleep 7–8 hours</h3>
+              <p>Muscles grow during rest, so treat sleep as part of training.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- ===== Footer ===== -->
-    <div class="footer">
-      © 2025 Personal Fitness Portfolio | Designed by Osanda Nimalarathna
-    </div>
+    <footer>
+      <div class="container foot">
+        <a href="#home" class="logo"
+          ><span class="logo-mark">ON</span>Osanda Nimalarathna</a
+        >
+        <p>
+          © <span id="year">2025</span> Personal Fitness Portfolio · Designed by
+          Osanda Nimalarathna
+        </p>
+      </div>
+    </footer>
+
+    <button class="icon-btn to-top" id="toTop" type="button" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+    <script src="script.js" defer></script>
   </body>
 </html>
